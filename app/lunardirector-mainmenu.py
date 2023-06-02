@@ -71,7 +71,9 @@ def welcome():
                 supercustom()
         supercustom()
     if choice == 'X':
-        void()
+    if choice == 'X':
+        subprocess.run('explorer.exe https://github.com/Lunar-Creators/Lunar-Media-Director')
+        welcome()
     if choice == 'V':
         void()
     if choice == 'E':
