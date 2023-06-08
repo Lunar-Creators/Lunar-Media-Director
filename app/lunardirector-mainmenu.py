@@ -10,11 +10,11 @@ def inputfile():
             ('Text Files', '*.txt'),
             ('All files', '*.*')
         )
-    input = file.askopenfilename(
+    fileselect = file.askopenfilename(
             title='Select file',
             initialdir='/',
             filetypes=filetypes)
-    print(f'{input}')
+    print(f'{fileselect}')
 
 def loading():
     print('\033[3m\033[33m{}\033[0m'.format('Loading...'))
@@ -30,19 +30,14 @@ def leavemodule():
     print('\033[3m\033[33m{}\033[0m'.format('Leaving...'))
 
 # exec = 'ffmpeg'
-# optlist = f' {exec} input'
+# inputfile = 'c:\'
+# inputfile1 = 'c:\'
+# inputfile2 = 'c:\'
+# optlist = f'{exec} {inputfile} {inputfile} {inputfile} {output}'
 # ffmpeg = exec + optlist
 # print(ffmpeg)
-# opts = '-i F:\intro720.mov -c:v copy F:\intpython.mov'
+# opts = ''
 # subprocess.run(f'ffmpeg {opts}')
-
-import tkinter as tk
-from tkinter import filedialog
-
-root = tk.Tk()
-root.withdraw()
-
-file_path = filedialog.askopenfilename()
 
 def welcome():
     os.system('cls' if os.name == 'nt' else 'clear')
@@ -53,17 +48,23 @@ def welcome():
         runpy.run_module(mod_name='ffmpeg-helpmodule')
         welcome()
     if choice == 'Y' or choice == 'y':
-        void()
+        wronginput()
+        welcome()
     if choice == 'A' or choice == 'a':
-        void()
+        wronginput()
+        welcome()
     if choice == 'P' or choice == 'p':
-        void()
+        wronginput()
+        welcome()
     if choice == 'T' or choice == 't':
-        void()
+        wronginput()
+        welcome()
     if choice == 'Q' or choice == 'q':
-        void()
+        wronginput()
+        welcome()
     if choice == 'K' or choice == 'k':
-        void()
+        wronginput()
+        welcome()
     if choice == 'C' or choice == 'c':
         os.system('cls' if os.name == 'nt' else 'clear')
         print('In this mode you can run your command with your flags for ffmpeg\nUse this mode if you fully know what you are doing. "-h" for help.\nType "quit" to exit\n\nEnter ffmpeg arguments directly,\nexample: "','\033[32m{}\033[0m'.format('-i input -c:v libvpx -crf 16 -an -lag-in-frames 16 -auto-alt-ref 0 -y output'),'"')
@@ -79,7 +80,8 @@ def welcome():
         subprocess.run('explorer.exe https://github.com/Lunar-Creators/Lunar-Media-Director', check=False)
         welcome()
     if choice == 'V' or choice == 'v':
-        void()
+        wronginput()
+        welcome()
     if choice == 'E' or choice == 'e':
         leavemodule()
     else:
