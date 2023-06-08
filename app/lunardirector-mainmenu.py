@@ -3,6 +3,19 @@ import subprocess
 import runpy
 import time
 
+def inputfile():
+    from tkinter import filedialog as file
+
+    filetypes = (
+            ('Text Files', '*.txt'),
+            ('All files', '*.*')
+        )
+    input = file.askopenfilename(
+            title='Select file',
+            initialdir='/',
+            filetypes=filetypes)
+    print(f'{input}')
+
 def loading():
     print('\033[3m\033[33m{}\033[0m'.format('Loading...'))
 # LOADING AFTER DEFINING FUNCTION
@@ -23,11 +36,17 @@ def leavemodule():
 # opts = '-i F:\intro720.mov -c:v copy F:\intpython.mov'
 # subprocess.run(f'ffmpeg {opts}')
 
+import tkinter as tk
+from tkinter import filedialog
 
+root = tk.Tk()
+root.withdraw()
+
+file_path = filedialog.askopenfilename()
 
 def welcome():
     os.system('cls' if os.name == 'nt' else 'clear')
-    print('\033[3m\033[33m{}\033[0m'.format('--appver unknown -indev'),'\033[3m\033[91m{}\033[0m'.format('--copyright "Lunar Creators"\n'))
+    print('\033[3m\033[33m{}\033[0m'.format('--appver 0.0.6 -indev'),'\033[3m\033[91m{}\033[0m'.format('--copyright "Lunar Creators"\n'))
     print('If you have a problem, or you want to suggest a preset or feature to add, please contact us!\n','\033[1m{}\033[0m'.format('WELCOME TO LUNAR MEDIA DIRECTOR! (CLI Version)'),'\n \n-------------------------- \n  H - FFmpeg Help\n  Y - Select Video Preset\n  A - Audio Converting\n  P - Photo Converting\n  T - Select Tool\n  Q - Half-Manual Mode\n  K - Audio to Video Encoding\n  C - Commandline mode\n  X - Our Github\n  V - Open Video Downloader\n  E - Exit \n--------------------------')
     choice = input("Type your choice: ")
     if choice == 'H' or choice == 'h':

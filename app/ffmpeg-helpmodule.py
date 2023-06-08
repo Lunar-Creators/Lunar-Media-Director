@@ -15,8 +15,6 @@ def wronginput():
 
 def leavemodule():
     print('\033[3m\033[33m{}\033[0m'.format('Leaving...'))
-
-
 # Universal part
 
 def helpmenu():
