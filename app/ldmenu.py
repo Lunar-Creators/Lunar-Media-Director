@@ -1,7 +1,8 @@
 import os
 import subprocess
-import runpy
 import time
+import ldaudio
+import ldmenu
 
 def inputfile():
     from tkinter import filedialog as file
@@ -41,11 +42,12 @@ def leavemodule():
 
 def welcome():
     os.system('cls' if os.name == 'nt' else 'clear')
-    print('\033[3m\033[33m{}\033[0m'.format('--appver 0.0.6 -indev'),'\033[3m\033[91m{}\033[0m'.format('--copyright "Lunar Creators"\n'))
+    print('\033[3m\033[33m{}\033[0m'.format('--appver 0.0.7 -indev'),'\033[3m\033[91m{}\033[0m'.format('--copyright "Lunar Creators"\n'))
     print('If you have a problem, or you want to suggest a preset or feature to add, please contact us!\n','\033[1m{}\033[0m'.format('WELCOME TO LUNAR MEDIA DIRECTOR! (CLI Version)'),'\n \n-------------------------- \n  H - FFmpeg Help\n  Y - Select Video Preset\n  A - Audio Converting\n  P - Photo Converting\n  T - Select Tool\n  Q - Half-Manual Mode\n  K - Audio to Video Encoding\n  C - Commandline mode\n  X - Our Github\n  V - Open Video Downloader\n  E - Exit \n--------------------------')
     choice = input("Type your choice: ")
     if choice == 'H' or choice == 'h':
-        runpy.run_module(mod_name='ffmpeg-helpmodule')
+        import ffhelp
+        ffhelp.helpmenu()
         welcome()
     if choice == 'Y' or choice == 'y':
         wronginput()
