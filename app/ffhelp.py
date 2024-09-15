@@ -2,10 +2,12 @@ import os
 import subprocess
 import time
 import ldmenu
+import lunlib
 
-ldmenu.loading()
-
+lunlib.loading()
+    
 def helpmenu():
+    lunlib.clear()
     print('\033[1m{}\033[0m'.format('\nHow can ffmpeg help you?'),'\n--------------------------\n  1 - Standart list of help\n  2 - Very long List of help\n  3 - EXTREAMLY LONG LIST OF HELP\n  4 - Flag help for available ffmpeg encoders\n  5 - List of available ffmpeg encoders\n  Q - Quit Help\n--------------------------\n','\033[35m{}\033[0m'.format('NOTE! In commandline mode, you can enter the help command with your arguments'))
     choice = input("Type your choice: ")
     if choice == '1':
@@ -30,8 +32,7 @@ def helpmenu():
     if choice == 'Q':
         ldmenu.welcome()
     else:
-        ldmenu.wronginput()
+        lunlib.wronginput()
         helpmenu()
-os.system('cls' if os.name == 'nt' else 'clear')
+lunlib.clear()
 helpmenu()    
-

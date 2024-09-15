@@ -2,10 +2,9 @@ import os
 import subprocess
 import runpy
 import time
+import lunlib
 
-def loading():
-    print('\033[3m\033[33m{}\033[0m'.format('Loading...'))
-loading()
+lunlib.loading()
 
 def inputfile():
     from tkinter import filedialog as seele
@@ -24,14 +23,6 @@ def inputfile():
 
 # Continue working with aPresets
 # opts = f'{opts}' + f' -c:a {variable}'
-
-def wronginput():
-    print('\033[1m\033[91m{}\033[0m'.format('INCORRECT INPUT'))
-    time.sleep(1)
-    os.system('cls' if os.name == 'nt' else 'clear')
-
-def leavemodule():
-    print('\033[3m\033[33m{}\033[0m'.format('Leaving...'))
 
 # exec = 'ffmpeg'
 # inputfile = 'c:\'
