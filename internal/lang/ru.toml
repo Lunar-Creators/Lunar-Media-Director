@@ -1,0 +1,14 @@
+[main]
+menu = "МЕНЮ"
+mainmenu = "Главное меню"
+welcome = "Добро пожаловать!"
+
+[button]
+home = "Главная"
+save = "Сохранить"
+exit = "Выход"
+
+[settings]
+settings = "Настройки"
+selectlang = "Выбор языка"
+ffmpegpath = "Путь к исполняемому файлу FFmpeg"

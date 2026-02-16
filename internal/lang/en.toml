@@ -1,0 +1,14 @@
+[main]
+menu = "MENU"
+mainmenu = "Main menu"
+welcome = "Welcome!"
+
+[button]
+home = "Home"
+save = "Save"
+exit = "Exit"
+
+[settings]
+settings = "Settings"
+selectlang = "Select Language"
+ffmpegpath = "Path to FFmpeg Binary"
