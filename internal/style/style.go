@@ -1,3 +1,4 @@
+// Package contains custom widgets and UI functions
 package style
 
 import (
@@ -13,6 +14,29 @@ import (
 	"lunar-md/internal/config"
 	"lunar-md/internal/lang"
 )
+
+/*//////////
+	Flash Button update on click
+*///////////
+
+// Changes the label and block usage of the button on click on specific time.
+// Usage: go NewFlashButtonUpdate( button, "Save", "Save success!", (Time in seconds int), (block button? true/false) )
+func NewFlashButtonUpdate(button *widget.Button, label string, templabel string, timeout time.Duration, block bool) {
+	fyne.DoAndWait(func() {
+		// Change text and disable button
+		button.SetText(templabel)
+		if block {button.Disable()}
+	})
+
+	// On 2 seconds
+	time.Sleep(time.Second * timeout)
+
+	fyne.DoAndWait( func() {
+		// Reset button state
+		button.SetText(label)
+		if block {button.Enable()}
+	})
+}
 
 /*//////////
 	Flash Modal PopUp

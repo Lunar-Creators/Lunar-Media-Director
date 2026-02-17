@@ -1,3 +1,4 @@
+// Package for executing internal functions
 package lunar
 import(
 	"os"

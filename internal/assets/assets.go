@@ -1,3 +1,4 @@
+// Package for reading embed binary assets such as Images or files
 package assets
 
 import (

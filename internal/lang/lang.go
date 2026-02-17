@@ -1,3 +1,4 @@
+// Package for reading current localization values
 package lang
 
 import (

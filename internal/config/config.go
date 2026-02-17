@@ -1,3 +1,4 @@
+// Package for managing and loading .toml configuration strings
 package config
 
 import (
